@@ -26,15 +26,11 @@ function PageNavbar() {
               id="basic-nav-dropdown "
               className="d-flex align-items-center fs-5 "
             >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Judul 1</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Another action
+                Judul 2
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Judul 3</NavDropdown.Item>
             </NavDropdown>
             <Nav>
               <InputGroup size="sm" className="d-flex align-items-center mx-1 ">
@@ -57,9 +53,8 @@ function PageNavbar() {
               id="basic-nav-dropdown"
               className="d-flex align-items-center "
             >
-              <NavDropdown.Item href="#action/3.1">Login</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Register</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Logout</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Akun Saya</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Keluar</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

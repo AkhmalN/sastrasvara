@@ -1,11 +1,21 @@
+:root {
+  --mainColor: rgb(93, 179, 219);
+  --mainColorLight: #eef5ff;
+  --secondaryColor: #7c93c3;
+  --textColor: #9eb8d9;
+  --buttonColor: #00abd0;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 .custom-navbar {
   background-color: var(--mainColor);
 }
+
 .custom-input-btn {
   background-color: #ffffff;
   border: none;
@@ -119,10 +129,25 @@
   font-size: 1.2rem;
   font-weight: 700;
 }
-:root {
-  --mainColor: rgba(181, 183, 60, 1);
-  --mainColorLight: #eef5ff;
-  --secondaryColor: #7c93c3;
-  --textColor: #9eb8d9;
-  --buttonColor: #00abd0;
+
+/* ========== LOGIN & REGISTER FORM ========== */
+.loginForm .row,
+.registerForm .row {
+  align-items: center;
 }
+
+.loginForm p,
+.registerForm p {
+  text-align: center;
+}
+/* ========== END LOGIN & REGISTER FORM ========== */
+
+/* ========== AKUN SAYA ========== */
+.akunSaya img {
+  width: 30%
+}
+.akunSaya .row {
+  align-items: center;
+  justify-content: space-evenly;
+}
+/* ========== END AKUN SAYA ========== */
