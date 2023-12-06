@@ -1,4 +1,4 @@
-import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { FaUser, FaSearch } from "react-icons/fa";
 import { InputGroup, Form } from "react-bootstrap";
 import "../App.css";
@@ -20,14 +20,17 @@ function PageNavbar() {
     <Navbar expand="lg" className="custom-navbar">
       <Container>
         <Navbar.Brand href="/">Logo</Navbar.Brand>
-        
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="align-middle">
           <Nav className="me-auto navbar-nav ms-auto nav_ul align-items-center">
             <Nav.Link href="/" className="d-flex align-items-center fs-5 ">
               Beranda
             </Nav.Link>
-            <Nav.Link href="/tentang-kami" className="d-flex align-items-center fs-5">
+            <Nav.Link
+              href="/tentang-kami"
+              className="d-flex align-items-center fs-5"
+            >
               Tentang Kami
             </Nav.Link>
 
@@ -63,11 +66,18 @@ function PageNavbar() {
               id="basic-nav-dropdown"
               className="d-flex align-items-center "
             >
-              <NavDropdown.Item onClick={handleShow}>Akun Saya</NavDropdown.Item>
-              <NavDropdown.Item onClick={handleShowLogout}>Keluar</NavDropdown.Item>
+              <NavDropdown.Item onClick={handleShow}>
+                Akun Saya
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={handleShowLogout}>
+                Keluar
+              </NavDropdown.Item>
             </NavDropdown>
             <AkunModal show={show} handleClose={handleClose} />
-            <LogoutModal showLogout={showLogout} handleCloseLogout={handleCloseLogout} />
+            <LogoutModal
+              showLogout={showLogout}
+              handleCloseLogout={handleCloseLogout}
+            />
           </Nav>
         </Navbar.Collapse>
       </Container>

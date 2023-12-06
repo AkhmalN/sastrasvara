@@ -1,21 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import Beranda from "./pages/Beranda";
 import PageNavbar from "./layouts/Navbar";
-import LoginForm from "./layouts/LoginForm";
+import Login from "./layouts/Login";
 import RegisterForm from "./layouts/RegisterForm";
-import TentangKami from "./pages/TentangKami"
+import TentangKami from "./pages/TentangKami";
+
+const Index = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      {window.location.pathname.toLowerCase() !== "/" &&
+        window.location.pathname.toLowerCase() !== "/daftar" && <PageNavbar />}
+
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/beranda" element={<Beranda />} />
+        <Route path="/daftar" element={<RegisterForm />} />
+        <Route path="/tentang-kami" element={<TentangKami />} />
+      </Routes>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <PageNavbar />
-    <Routes>
-      <Route path="/" Component={Beranda} />
-      <Route path="/masuk" Component={LoginForm} />
-      <Route path="/daftar" Component={RegisterForm} />
-      <Route path="/tentang-kami" Component={TentangKami} />
-    </Routes>
+    <Index />
   </BrowserRouter>
 );

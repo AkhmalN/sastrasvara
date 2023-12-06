@@ -1,15 +1,16 @@
-import React from 'react'
-import { Button, Col, Container, Form, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Logo from "../img/pngwing.com.png";
 
 function RegisterForm() {
   return (
     <Container className="registerForm">
-      <Row>
-        <Col md={5} xs={12}>
-          <h1>LOGO</h1>
+      <Row className="justify-content-md-center align-items-center min-vh-100">
+        <Col md={3} xs={12}>
+          <img src={Logo} alt="Sastra Svara" width={100} />
         </Col>
-        <Col>
+        <Col md={4} xs={12}>
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Nama Lengkap :</Form.Label>
@@ -39,7 +40,7 @@ function RegisterForm() {
         </Col>
       </Row>
     </Container>
-  )
+  );
 }
 
-export default RegisterForm
+export default RegisterForm;

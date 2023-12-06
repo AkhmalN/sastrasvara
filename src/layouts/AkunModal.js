@@ -1,4 +1,4 @@
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import Logo from "../img/pngwing.com.png";
 
 function AkunModal(props) {
@@ -9,15 +9,22 @@ function AkunModal(props) {
         onHide={props.handleClose}
         backdrop="static"
         keyboard={false}
-        className="text-center"
       >
         <Modal.Body>
           <h2 className="mb-3">Akun Saya</h2>
-          <img src={Logo} alt="Sastra Svara" width={100} className="mb-3" />
-          <p>Nama : Agni Nafitri</p>
-          <p>Email : agninafitri27@gmail.com</p>
-          <p>Kelas : IT-106</p>
-          <p>Asal sekolah : Universitas Siber Asia</p>
+          <img src={Logo} alt="Sastra Svara" width={100} className="mb-3 " />
+          <Form>
+            <label class="form-label">Username :</label>
+            <p className="form-control ">Nama : Agni Nafitri</p>
+            <label class="form-label">Email :</label>
+            <p className="form-control ">Email : agninafitri27@gmail.com</p>
+            <label class="form-label">Class :</label>
+            <p className="form-control ">Kelas : IT-106</p>
+            <label class="form-label">Class :</label>
+            <p className="form-control ">
+              Asal sekolah : Universitas Siber Asia
+            </p>
+          </Form>
         </Modal.Body>
 
         <Modal.Footer>

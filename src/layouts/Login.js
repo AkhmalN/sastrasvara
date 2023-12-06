@@ -1,15 +1,16 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Logo from "../img/pngwing.com.png";
 
-function LoginForm() {
+function Login() {
   return (
-    <Container className="loginForm">
-      <Row>
-        <Col md={5} xs={12}>
-          <h1>LOGO</h1>
+    <Container className="Login-container">
+      <Row className="justify-content-md-center align-items-center min-vh-100">
+        <Col md={3} xs={12} className="text-center">
+          <img src={Logo} alt="Sastra Svara" width={100} />
         </Col>
-        <Col>
+        <Col md={4} xs={12}>
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Email :</Form.Label>
@@ -22,12 +23,12 @@ function LoginForm() {
             </Form.Group>
 
             <div className="d-grid mb-3">
-              <Button variant="primary" size="lg">
+              <Button variant="primary" size="lg" href="/beranda">
                 Masuk
               </Button>
             </div>
           </Form>
-          
+
           <p>
             Belum memiliki akun? <Link to={"/daftar"}>Daftar disini.</Link>
           </p>
@@ -37,4 +38,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default Login;
