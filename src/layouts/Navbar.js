@@ -5,16 +5,20 @@ import "../App.css";
 import AkunModal from "./AkunModal";
 import { useState } from "react";
 import LogoutModal from "./LogoutModal";
+import { useNavigate } from "react-router-dom";
 
-function PageNavbar() {
-  const [show, setShow] = useState(false);
+function PageNavbar({ isLoggedIn }) {
+  const navigate = useNavigate();
+  const [showAccount, setShowAccount] = useState(false);
   const [showLogout, setShowLogout] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleCloseAccount = () => setShowAccount(false);
+  const handleShowAccount = () => setShowAccount(true);
 
   const handleCloseLogout = () => setShowLogout(false);
   const handleShowLogout = () => setShowLogout(true);
+
+  const handleLogin = () => navigate("/");
 
   return (
     <Navbar expand="lg" className="custom-navbar">
@@ -61,19 +65,32 @@ function PageNavbar() {
           </Nav>
 
           <Nav className="d-flex align-items-center  ">
-            <NavDropdown
-              title={<FaUser />}
-              id="basic-nav-dropdown"
-              className="d-flex align-items-center "
-            >
-              <NavDropdown.Item onClick={handleShow}>
-                Akun Saya
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={handleShowLogout}>
-                Keluar
-              </NavDropdown.Item>
-            </NavDropdown>
-            <AkunModal show={show} handleClose={handleClose} />
+            {isLoggedIn ? (
+              <NavDropdown
+                title={<FaUser />}
+                id="basic-nav-dropdown"
+                className="d-flex align-items-center"
+              >
+                <NavDropdown.Item onClick={handleShowAccount}>
+                  Akun Saya
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={handleShowLogout}>
+                  Keluar
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <NavDropdown
+                title="Masuk"
+                id="basic-nav-dropdown"
+                className="d-flex align-items-center"
+              >
+                <NavDropdown.Item onClick={handleLogin}>Masuk</NavDropdown.Item>
+              </NavDropdown>
+            )}
+            <AkunModal
+              showAccount={showAccount}
+              handleCloseAccount={handleCloseAccount}
+            />
             <LogoutModal
               showLogout={showLogout}
               handleCloseLogout={handleCloseLogout}
