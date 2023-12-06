@@ -1,23 +1,33 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import { FaUser, FaSearch } from "react-icons/fa";
 import { InputGroup, Form } from "react-bootstrap";
 import "../App.css";
+import AkunModal from "./AkunModal";
+import { useState } from "react";
+import LogoutModal from "./LogoutModal";
 
 function PageNavbar() {
+  const [show, setShow] = useState(false);
+  const [showLogout, setShowLogout] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleCloseLogout = () => setShowLogout(false);
+  const handleShowLogout = () => setShowLogout(true);
+
   return (
     <Navbar expand="lg" className="custom-navbar">
       <Container>
-        <Navbar.Brand href="#home">Logo</Navbar.Brand>
+        <Navbar.Brand href="/">Logo</Navbar.Brand>
+        
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className="align-middle ">
+        <Navbar.Collapse id="basic-navbar-nav" className="align-middle">
           <Nav className="me-auto navbar-nav ms-auto nav_ul align-items-center">
-            <Nav.Link href="#home" className="d-flex align-items-center fs-5 ">
+            <Nav.Link href="/" className="d-flex align-items-center fs-5 ">
               Beranda
             </Nav.Link>
-            <Nav.Link href="#home" className="d-flex align-items-center fs-5">
+            <Nav.Link href="/tentang-kami" className="d-flex align-items-center fs-5">
               Tentang Kami
             </Nav.Link>
 
@@ -27,11 +37,10 @@ function PageNavbar() {
               className="d-flex align-items-center fs-5 "
             >
               <NavDropdown.Item href="#action/3.1">Judul 1</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Judul 2
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Judul 2</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Judul 3</NavDropdown.Item>
             </NavDropdown>
+
             <Nav>
               <InputGroup size="sm" className="d-flex align-items-center mx-1 ">
                 <Form.Control
@@ -47,15 +56,18 @@ function PageNavbar() {
               </InputGroup>
             </Nav>
           </Nav>
-          <Nav href="#link" className="d-flex align-items-center  ">
+
+          <Nav className="d-flex align-items-center  ">
             <NavDropdown
               title={<FaUser />}
               id="basic-nav-dropdown"
               className="d-flex align-items-center "
             >
-              <NavDropdown.Item href="#action/3.1">Akun Saya</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Keluar</NavDropdown.Item>
+              <NavDropdown.Item onClick={handleShow}>Akun Saya</NavDropdown.Item>
+              <NavDropdown.Item onClick={handleShowLogout}>Keluar</NavDropdown.Item>
             </NavDropdown>
+            <AkunModal show={show} handleClose={handleClose} />
+            <LogoutModal showLogout={showLogout} handleCloseLogout={handleCloseLogout} />
           </Nav>
         </Navbar.Collapse>
       </Container>
