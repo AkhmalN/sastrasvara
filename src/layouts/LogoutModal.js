@@ -16,6 +16,8 @@ function LogoutModal({ showLogout, handleCloseLogout }) {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("email");
     localStorage.removeItem("id");
+    localStorage.removeItem("kelas");
+    localStorage.removeItem("kampus");
     navigate("/beranda");
     window.location.reload(); // Reload the page
 

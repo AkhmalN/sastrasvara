@@ -6,7 +6,8 @@ import AkunModal from "./AkunModal";
 import { useState } from "react";
 import LogoutModal from "./LogoutModal";
 import { useNavigate } from "react-router-dom";
-import Logo from "../img/logo_sastrasvara.png"
+import Logo from "../img/logo_sastrasvara.png";
+import axios from "axios";
 
 function PageNavbar({ isLoggedIn }) {
   const navigate = useNavigate();
@@ -31,7 +32,10 @@ function PageNavbar({ isLoggedIn }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="align-middle">
           <Nav className="me-auto navbar-nav ms-auto nav_ul align-items-center">
-            <Nav.Link href="/" className="d-flex align-items-center fs-5 ">
+            <Nav.Link
+              href="/beranda"
+              className="d-flex align-items-center fs-5 "
+            >
               Beranda
             </Nav.Link>
             <Nav.Link
