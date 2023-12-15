@@ -1,6 +1,6 @@
-import { Button, Form, Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import Logo from "../img/pngwing.com.png";
+import Logo from "../img/logo_sastrasvara.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -59,7 +59,7 @@ function AkunModal(props, { isloggedIn }) {
               />
 
               <div className="mt-3">
-                <label className="form-label">Username :</label>
+                <label className="form-label">Nama :</label>
                 <input
                   className="form-control"
                   type="text"
@@ -67,6 +67,7 @@ function AkunModal(props, { isloggedIn }) {
                   placeholder="username"
                   onChange={(e) => setUsername(e.target.value)}
                 />
+
                 <label className="form-label">Email :</label>
                 <input
                   type="email"
@@ -75,6 +76,21 @@ function AkunModal(props, { isloggedIn }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+
+                <label className="form-label">Kelas :</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="kelas"
+                />
+
+                <label className="form-label">Asal Sekolah :</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="asal sekolah"
+                />
+
               </div>
             </>
           ) : (
@@ -88,7 +104,7 @@ function AkunModal(props, { isloggedIn }) {
           </Button>
           {username && email && (
             <Button variant="primary" onClick={() => handleEditAndSave(id)}>
-              Edit & Simpan
+              Simpan
             </Button>
           )}
         </Modal.Footer>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import LOGO from "../img/login-sastra.png";
+import LOGO from "../img/logo_sastrasvara.png";
 import axios from "axios";
 
 function RegisterForm() {
@@ -64,7 +64,7 @@ function RegisterForm() {
             <Form.Group className="mb-3">
               <Form.Label>Email :</Form.Label>
               <Form.Control
-                type="password"
+                type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => {

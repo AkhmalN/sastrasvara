@@ -1,5 +1,5 @@
 :root {
-  --mainColor: rgb(93, 179, 219);
+  --mainColor: #4e64b3;
   --mainColorLight: #eef5ff;
   --secondaryColor: #7c93c3;
   --textColor: #9eb8d9;
@@ -12,8 +12,10 @@
   box-sizing: border-box;
 }
 
-.custom-navbar {
-  background-color: var(--mainColor);
+body, 
+.custom-navbar .nav-link,
+.custom-navbar .nav {
+  color: var(--mainColor) !important;
 }
 
 .custom-input-btn {
@@ -39,6 +41,35 @@
 }
 /* ========== END LOGIN & REGISTER FORM ========== */
 
+
+/* ========== TENTANG KAMI ========== */
+.tentangKami {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .tentangKami p {
   font-size: 18px;
 }
+
+.tentangKami img {
+  width: 65%;
+}
+
+@media screen and (max-width: 768px) {
+  .tentangKami {
+    margin-top: 30px;
+  }
+
+  .tentangKami img {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  .tentangKami p {
+    font-size: 16px;
+  }
+}
+/* ========== END TENTANG KAMI ========== */

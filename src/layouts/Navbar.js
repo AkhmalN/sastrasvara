@@ -6,6 +6,7 @@ import AkunModal from "./AkunModal";
 import { useState } from "react";
 import LogoutModal from "./LogoutModal";
 import { useNavigate } from "react-router-dom";
+import Logo from "../img/logo_sastrasvara.png"
 
 function PageNavbar({ isLoggedIn }) {
   const navigate = useNavigate();
@@ -23,7 +24,9 @@ function PageNavbar({ isLoggedIn }) {
   return (
     <Navbar expand="lg" className="custom-navbar">
       <Container>
-        <Navbar.Brand href="/">Logo</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img src={Logo} alt="Sastra Svara" width={50} />
+        </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="align-middle">
