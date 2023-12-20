@@ -22,7 +22,10 @@ function RegisterForm() {
     setLoading(true);
     try {
       await axios
-        .post("http://localhost:8081/api/v1/users/register", data)
+        .post(
+          "https://server-sastrasvara-akhmaln.vercel.app/api/v1/users/register",
+          data
+        )
         .then((response) => {
           if (response.status === 200) {
             setSuccses("Berhasil Membuat Akun!");

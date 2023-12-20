@@ -4,7 +4,7 @@ import Logo from "../img/logo_sastrasvara.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function AkunModal(props, { isloggedIn }) {
+function AkunModal(props) {
   const navigate = useNavigate();
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
@@ -12,18 +12,28 @@ function AkunModal(props, { isloggedIn }) {
   const [kelas, setKelas] = useState(null);
   const [kampus, setKampus] = useState(null);
   const [succsesEdit, setSuccsesEdit] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
+
+  const getLocalStorageValue = (key) => {
+    const storedValue = localStorage.getItem(key);
+    return storedValue;
+  };
+
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
     const storedEmail = localStorage.getItem("email");
     const storedId = localStorage.getItem("id");
     const storedKelas = localStorage.getItem("kelas");
     const storedKampus = localStorage.getItem("kampus");
+    const storedLogin = localStorage.getItem("isLoggedIn");
     setUsername(storedUsername);
     setEmail(storedEmail);
     setId(storedId);
     setKelas(storedKelas);
     setKampus(storedKampus);
+    setIsLoggedIn(storedLogin);
   }, []);
+
   const handleEditAndSave = async () => {
     const data = {
       username: username,
@@ -59,7 +69,7 @@ function AkunModal(props, { isloggedIn }) {
       >
         <Modal.Body>
           <h2 className="mb-3">Akun Saya</h2>
-          {username && email && id ? (
+          {isLoggedIn ? (
             <>
               {succsesEdit && (
                 <div className="alert alert-success">{succsesEdit}</div>
@@ -95,7 +105,7 @@ function AkunModal(props, { isloggedIn }) {
                   type="text"
                   className="form-control"
                   placeholder="kelas"
-                  value={kelas}
+                  value={kelas !== null && kelas !== "undefined" ? kelas : "-"}
                   onChange={(e) => setKelas(e.target.value)}
                 />
 
@@ -104,7 +114,9 @@ function AkunModal(props, { isloggedIn }) {
                   type="text"
                   className="form-control"
                   placeholder="asal sekolah"
-                  value={kampus}
+                  value={
+                    kampus !== null && kampus !== "undefined" ? kampus : "-"
+                  }
                   onChange={(e) => setKampus(e.target.value)}
                 />
               </div>

@@ -25,7 +25,7 @@ function PageNavbar({ isLoggedIn }) {
   return (
     <Navbar expand="lg" className="custom-navbar">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/beranda">
           <img src={Logo} alt="Sastra Svara" width={50} />
         </Navbar.Brand>
 
@@ -91,6 +91,9 @@ function PageNavbar({ isLoggedIn }) {
                 id="basic-nav-dropdown"
                 className="d-flex align-items-center"
               >
+                <NavDropdown.Item onClick={handleShowAccount}>
+                  Akun Saya
+                </NavDropdown.Item>
                 <NavDropdown.Item onClick={handleLogin}>Masuk</NavDropdown.Item>
               </NavDropdown>
             )}
