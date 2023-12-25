@@ -78,7 +78,8 @@ const Login = ({ setIsLoggedIn }) => {
             {error && <p className="text-danger">{error}</p>}
           </Form>
           <p>
-            Belum memiliki akun? <Link to={"/daftar"}>Register disini.</Link>
+            Belum memiliki akun?{" "}
+            <Link to={"/sastrasvara/daftar"}>Register disini.</Link>
           </p>
         </Col>
       </Row>
