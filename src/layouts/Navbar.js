@@ -7,7 +7,6 @@ import { useState } from "react";
 import LogoutModal from "./LogoutModal";
 import { useNavigate } from "react-router-dom";
 import Logo from "../img/logo_sastrasvara.png";
-import axios from "axios";
 
 function PageNavbar({ isLoggedIn }) {
   const navigate = useNavigate();
