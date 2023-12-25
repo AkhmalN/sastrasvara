@@ -18,7 +18,7 @@ function LogoutModal({ showLogout, handleCloseLogout }) {
     localStorage.removeItem("id");
     localStorage.removeItem("kelas");
     localStorage.removeItem("kampus");
-    navigate("/sastrasvara/beranda");
+    navigate("/sastrasvara/");
     window.location.reload(); // Reload the page
 
     handleCloseLogout(false);
