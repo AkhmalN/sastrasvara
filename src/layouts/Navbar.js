@@ -39,7 +39,7 @@ function PageNavbar({ isLoggedIn }) {
               Beranda
             </Nav.Link>
             <Nav.Link
-              href="/tentang-kami"
+              href="/sastrasvara/tentang-kami"
               className="d-flex align-items-center fs-5"
             >
               Tentang Kami
