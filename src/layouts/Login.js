@@ -29,7 +29,7 @@ const Login = ({ setIsLoggedIn }) => {
             localStorage.setItem("id", res.data.user.id);
 
             setIsLoggedIn(true);
-            navigate("/beranda");
+            navigate("/sastrasvara/beranda");
             console.log(res);
           } else if (res.status === 404) {
             setError("Email atau password tidak ditemukan");
