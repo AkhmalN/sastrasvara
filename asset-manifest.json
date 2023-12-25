@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/sastrasvara/static/css/main.f649d47f.css",
-    "main.js": "/sastrasvara/static/js/main.d460ac85.js",
+    "main.js": "/sastrasvara/static/js/main.10208761.js",
     "static/media/logo_sastrasvara.png": "/sastrasvara/static/media/logo_sastrasvara.ff7b24768f3dce772eb6.png",
     "index.html": "/sastrasvara/index.html",
     "main.f649d47f.css.map": "/sastrasvara/static/css/main.f649d47f.css.map",
-    "main.d460ac85.js.map": "/sastrasvara/static/js/main.d460ac85.js.map"
+    "main.10208761.js.map": "/sastrasvara/static/js/main.10208761.js.map"
   },
   "entrypoints": [
     "static/css/main.f649d47f.css",
-    "static/js/main.d460ac85.js"
+    "static/js/main.10208761.js"
   ]
 }
