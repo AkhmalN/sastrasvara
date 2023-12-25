@@ -19,12 +19,12 @@ function PageNavbar({ isLoggedIn }) {
   const handleCloseLogout = () => setShowLogout(false);
   const handleShowLogout = () => setShowLogout(true);
 
-  const handleLogin = () => navigate("/");
+  const handleLogin = () => navigate("/sastrasvara/masuk");
 
   return (
     <Navbar expand="lg" className="custom-navbar">
       <Container>
-        <Navbar.Brand href="/beranda">
+        <Navbar.Brand href="/sastrasvara">
           <img src={Logo} alt="Sastra Svara" width={50} />
         </Navbar.Brand>
 
@@ -32,7 +32,7 @@ function PageNavbar({ isLoggedIn }) {
         <Navbar.Collapse id="basic-navbar-nav" className="align-middle">
           <Nav className="me-auto navbar-nav ms-auto nav_ul align-items-center">
             <Nav.Link
-              href="/sastrasvara/beranda"
+              href="/sastrasvara"
               className="d-flex align-items-center fs-5 "
             >
               Beranda

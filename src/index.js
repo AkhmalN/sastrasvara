@@ -17,13 +17,16 @@ const Index = () => {
 
   const isNavbarVisible = () => {
     const currentPath = window.location.pathname.toLowerCase();
-    return currentPath !== "/" && currentPath !== "/daftar";
+    return (
+      currentPath !== "/sastrasvara/masuk" &&
+      currentPath !== "/sastrasvara/daftar"
+    );
   };
-  useEffect(() => {
-    if (window.location.pathname.toLowerCase() === "/") {
-      navigate("/");
-    }
-  }, [isLoggedIn, navigate]);
+  // useEffect(() => {
+  //   if (window.location.pathname.toLowerCase() === "/") {
+  //     navigate("/");
+  //   }
+  // }, [isLoggedIn, navigate]);
 
   // Kunci Route
 
@@ -40,10 +43,10 @@ const Index = () => {
       {isNavbarVisible() && <PageNavbar isLoggedIn={isLoggedIn} />}
       <Routes>
         <Route
-          path="/sastrasvara/"
+          path="/sastrasvara/masuk"
           element={<Login setIsLoggedIn={setIsLoggedIn} />}
         />
-        <Route path="/sastrasvara/beranda" element={<Beranda />} />
+        <Route path="/sastrasvara" element={<Beranda />} />
         <Route path="/sastrasvara/daftar" element={<RegisterForm />} />
         <Route path="/sastrasvara/tentang-kami" element={<TentangKami />} />
       </Routes>

@@ -53,7 +53,8 @@ function AkunModal(props) {
           setSuccsesEdit("berhasil Mengubah Data!");
           setTimeout(() => {
             setSuccsesEdit(null);
-            navigate("/beranda");
+            navigate("/sastrasvara/");
+            window.location.reload(); // Reload the page
           }, 3000);
         })
         .catch((error) => console.error(error));
