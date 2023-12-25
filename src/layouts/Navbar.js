@@ -32,7 +32,7 @@ function PageNavbar({ isLoggedIn }) {
         <Navbar.Collapse id="basic-navbar-nav" className="align-middle">
           <Nav className="me-auto navbar-nav ms-auto nav_ul align-items-center">
             <Nav.Link
-              href="/beranda"
+              href="/sastrasvara/beranda"
               className="d-flex align-items-center fs-5 "
             >
               Beranda

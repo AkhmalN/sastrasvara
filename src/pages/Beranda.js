@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 
 const Beranda = ({ isLoggedIn }) => {
   const [username, setUsername] = useState(null);
-  const [data, setData] = useState([]);
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
     setUsername(storedUsername);
-  });
+  }, [username]);
 
   return (
     <div className="container-fluid">
