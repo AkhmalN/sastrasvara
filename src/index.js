@@ -40,9 +40,9 @@ const Index = () => {
       {isNavbarVisible() && <PageNavbar isLoggedIn={isLoggedIn} />}
       <Routes>
         <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/beranda" element={<Beranda />} />
-        <Route path="/daftar" element={<RegisterForm />} />
-        <Route path="/tentang-kami" element={<TentangKami />} />
+        <Route path="/sastrasvara/beranda" element={<Beranda />} />
+        <Route path="/sastrasvara/daftar" element={<RegisterForm />} />
+        <Route path="/sastrasvara/tentang-kami" element={<TentangKami />} />
       </Routes>
     </div>
   );
