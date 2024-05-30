@@ -10,36 +10,15 @@ import DetailCerita from "./pages/DetailCerita";
 import Cerita from "./pages/Cerita";
 
 const Index = () => {
-  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     const storedStatus = localStorage.getItem("isLoggedIn");
     return storedStatus === "true";
   });
-  // const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   const isNavbarVisible = () => {
     const currentPath = window.location.pathname.toLowerCase();
-    return (
-      currentPath !== "/sastrasvara/masuk" &&
-      currentPath !== "/sastrasvara/daftar"
-    );
+    return currentPath !== "/" && currentPath !== "/daftar";
   };
-  // useEffect(() => {
-  //   if (window.location.pathname.toLowerCase() === "/") {
-  //     navigate("/");
-  //   }
-  // }, [isLoggedIn, navigate]);
-
-  // Kunci Route
-
-  // useEffect(() => {
-  //   if (
-  //     (!isLoggedIn && window.location.pathname.toLowerCase() === "/beranda") ||
-  //     window.location.pathname.toLowerCase() === "/tentang-kami"
-  //   ) {
-  //     navigate("/");
-  //   }
-  // }, [isLoggedIn, navigate]);
   return (
     <div>
       {isNavbarVisible() && <PageNavbar isLoggedIn={isLoggedIn} />}
@@ -50,12 +29,6 @@ const Index = () => {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/cerita" element={<Cerita />} />
         <Route path="/cerita/judul" element={<DetailCerita />} />
-        <Route
-          path="/sastrasvara/masuk"
-          element={<Login setIsLoggedIn={setIsLoggedIn} />}
-        />
-        <Route path="/sastrasvara" element={<Beranda />} />
-        <Route path="/sastrasvara/daftar" element={<RegisterForm />} />
       </Routes>
     </div>
   );

@@ -119,8 +119,7 @@ function RegisterForm() {
           </Form>
 
           <p>
-            Sudah memiliki akun?{" "}
-            <Link to={"/sastrasvara/masuk"}>Masuk disini.</Link>
+            Sudah memiliki akun? <Link to={"/"}>Masuk disini.</Link>
           </p>
         </Col>
       </Row>

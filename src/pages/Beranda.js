@@ -2,16 +2,9 @@ import React, { useEffect, useState } from "react";
 import ImageLogo from "../img/logo_sastrasvara.png";
 import { Button, Card } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
-import AjisakaPic from "../img/ajisaka.jpeg"
+import AjisakaPic from "../img/ajisaka.jpeg";
 
 const Beranda = ({ isLoggedIn }) => {
-  const [username, setUsername] = useState(null);
-
-  useEffect(() => {
-    const storedUsername = localStorage.getItem("username");
-    setUsername(storedUsername);
-  });
-
   return (
     <div className="beranda container-fluid">
       <header className="d-flex justify-content-evenly align-items-center">
@@ -62,6 +55,6 @@ const Beranda = ({ isLoggedIn }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Beranda;

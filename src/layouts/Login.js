@@ -29,7 +29,7 @@ const Login = ({ setIsLoggedIn }) => {
             localStorage.setItem("id", res.data.user.id);
 
             setIsLoggedIn(true);
-            navigate("/sastrasvara");
+            navigate("/beranda");
           } else if (res.status === 404) {
             setError("Email atau password tidak ditemukan");
           }
@@ -48,7 +48,7 @@ const Login = ({ setIsLoggedIn }) => {
         </Col>
         <Col md={4} xs={12}>
           <h1>Masuk Sastrasvara</h1>
-          <br/>
+          <br />
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Email:</Form.Label>
