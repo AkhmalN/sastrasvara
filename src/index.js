@@ -56,7 +56,6 @@ const Index = () => {
         />
         <Route path="/sastrasvara" element={<Beranda />} />
         <Route path="/sastrasvara/daftar" element={<RegisterForm />} />
-        <Route path="/sastrasvara/tentang-kami" element={<TentangKami />} />
       </Routes>
     </div>
   );

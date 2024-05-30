@@ -11,7 +11,6 @@ const Beranda = ({ isLoggedIn }) => {
     const storedUsername = localStorage.getItem("username");
     setUsername(storedUsername);
   });
-  }, [username];
 
   return (
     <div className="beranda container-fluid">
@@ -63,6 +62,6 @@ const Beranda = ({ isLoggedIn }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Beranda;

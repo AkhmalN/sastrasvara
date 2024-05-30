@@ -72,22 +72,13 @@ const Login = ({ setIsLoggedIn }) => {
 
             <div className="d-grid mb-3">
               <Button variant="primary" size="lg" onClick={handleOnSubmit}>
-<<<<<<< HEAD
-                {loading ? "Loading ..." : "Masuk"}
-=======
                 {loading ? "Tunggu ..." : "Login"}
->>>>>>> b7abd1f2fea4b0e530fdc03b6a5be69d7cbc2d37
               </Button>
             </div>
             {error && <p className="text-danger">{error}</p>}
           </Form>
           <p>
-<<<<<<< HEAD
             Belum memiliki akun? <Link to={"/daftar"}>Daftar disini.</Link>
-=======
-            Belum memiliki akun?{" "}
-            <Link to={"/sastrasvara/daftar"}>Register disini.</Link>
->>>>>>> b7abd1f2fea4b0e530fdc03b6a5be69d7cbc2d37
           </p>
         </Col>
       </Row>
