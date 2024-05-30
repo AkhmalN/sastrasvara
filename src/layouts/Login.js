@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import LOGO from "../img/logo_sastrasvara.png";
@@ -15,15 +15,21 @@ const Login = ({ setIsLoggedIn }) => {
     setError("");
     try {
       await axios
-        .post(" http://localhost:8081/api/v1/auth/", { email, password })
+        .post("https://server-sastrasvara.vercel.app/api/v1/auth", {
+          email,
+          password,
+        })
         .then((res) => {
           if (res.status === 200) {
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("username", res.data.user.username);
             localStorage.setItem("email", res.data.user.email);
+            localStorage.setItem("kelas", res.data.user.kelas);
+            localStorage.setItem("kampus", res.data.user.kampus);
             localStorage.setItem("id", res.data.user.id);
+
             setIsLoggedIn(true);
-            navigate("/beranda");
+            navigate("/sastrasvara");
           } else if (res.status === 404) {
             setError("Email atau password tidak ditemukan");
           }
@@ -34,7 +40,6 @@ const Login = ({ setIsLoggedIn }) => {
       setLoading(false);
     }
   };
-
   return (
     <Container className="Login">
       <Row className="justify-content-evenly align-items-center min-vh-100">
@@ -67,13 +72,22 @@ const Login = ({ setIsLoggedIn }) => {
 
             <div className="d-grid mb-3">
               <Button variant="primary" size="lg" onClick={handleOnSubmit}>
+<<<<<<< HEAD
                 {loading ? "Loading ..." : "Masuk"}
+=======
+                {loading ? "Tunggu ..." : "Login"}
+>>>>>>> b7abd1f2fea4b0e530fdc03b6a5be69d7cbc2d37
               </Button>
             </div>
             {error && <p className="text-danger">{error}</p>}
           </Form>
           <p>
+<<<<<<< HEAD
             Belum memiliki akun? <Link to={"/daftar"}>Daftar disini.</Link>
+=======
+            Belum memiliki akun?{" "}
+            <Link to={"/sastrasvara/daftar"}>Register disini.</Link>
+>>>>>>> b7abd1f2fea4b0e530fdc03b6a5be69d7cbc2d37
           </p>
         </Col>
       </Row>

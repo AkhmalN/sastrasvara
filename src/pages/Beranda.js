@@ -3,6 +3,7 @@ import ImageLogo from "../img/logo_sastrasvara.png";
 import { Button, Card } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
 import AjisakaPic from "../img/ajisaka.jpeg"
+
 const Beranda = ({ isLoggedIn }) => {
   const [username, setUsername] = useState(null);
 
@@ -10,6 +11,7 @@ const Beranda = ({ isLoggedIn }) => {
     const storedUsername = localStorage.getItem("username");
     setUsername(storedUsername);
   });
+  }, [username];
 
   return (
     <div className="beranda container-fluid">

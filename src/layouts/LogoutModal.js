@@ -16,7 +16,9 @@ function LogoutModal({ showLogout, handleCloseLogout }) {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("email");
     localStorage.removeItem("id");
-    navigate("/beranda");
+    localStorage.removeItem("kelas");
+    localStorage.removeItem("kampus");
+    navigate("/sastrasvara");
     window.location.reload(); // Reload the page
 
     handleCloseLogout(false);

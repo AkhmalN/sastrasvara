@@ -21,19 +21,41 @@ function RegisterForm() {
   const handleOnSubmit = async () => {
     setLoading(true);
     try {
-      await axios
-        .post("http://localhost:8081/api/v1/users/register", data)
-        .then((response) => {
-          if (response.status === 200) {
-            setSuccses("Berhasil Membuat Akun!");
-            setTimeout(() => {
-              setSuccses(null);
-              window.location.reload();
-            }, 3000);
-          }
-        });
+      if (data.username === "" && data.email === "" && data.password === "") {
+        setError("Isi Semua Form Terlebih Dahulu!");
+        setTimeout(() => {
+          setError("");
+        }, 1500);
+      } else if (
+        data.username === "" ||
+        data.email === "" ||
+        data.password === ""
+      ) {
+        setError("Lengkapi Semua Form!");
+        setTimeout(() => {
+          setError("");
+        }, 1500);
+      } else {
+        await axios
+          .post(
+            "https://server-sastrasvara-akhmaln.vercel.app/api/v1/users/register",
+            data
+          )
+          .then((response) => {
+            if (response.status === 200) {
+              setSuccses("Berhasil Membuat Akun!");
+              setTimeout(() => {
+                setSuccses(null);
+                window.location.reload();
+              }, 3000);
+            }
+          });
+      }
     } catch (error) {
       setError(error);
+      setTimeout(() => {
+        setError("");
+      }, 1500);
     } finally {
       setLoading(false);
     }
@@ -48,6 +70,7 @@ function RegisterForm() {
         <Col md={4} xs={12}>
           <h2>Daftar Sastrasvara</h2>
           {succses && <div className="alert alert-success">{succses}</div>}
+          {error && <div className="alert alert-danger">{error}</div>}
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Nama Lengkap :</Form.Label>
@@ -58,6 +81,7 @@ function RegisterForm() {
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
+                required
               />
             </Form.Group>
 
@@ -70,6 +94,7 @@ function RegisterForm() {
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
+                required
               />
             </Form.Group>
 
@@ -82,6 +107,7 @@ function RegisterForm() {
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
+                required
               />
             </Form.Group>
 
@@ -93,7 +119,8 @@ function RegisterForm() {
           </Form>
 
           <p>
-            Sudah memiliki akun? <Link to={"/"}>Masuk disini.</Link>
+            Sudah memiliki akun?{" "}
+            <Link to={"/sastrasvara/masuk"}>Masuk disini.</Link>
           </p>
         </Col>
       </Row>
