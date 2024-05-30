@@ -41,12 +41,12 @@ function RegisterForm() {
 
   return (
     <Container className="registerForm">
-      <Row className="justify-content-md-center align-items-center min-vh-100">
+      <Row className="justify-content-evenly align-items-center min-vh-100">
         <Col md={3} xs={12}>
           <img src={LOGO} alt="Sastra Svara" width="100%" />
         </Col>
         <Col md={4} xs={12}>
-          <h2>Register Sastrasvara</h2>
+          <h2>Daftar Sastrasvara</h2>
           {succses && <div className="alert alert-success">{succses}</div>}
           <Form>
             <Form.Group className="mb-3">
@@ -87,7 +87,7 @@ function RegisterForm() {
 
             <div className="d-grid mb-3">
               <Button variant="primary" size="lg" onClick={handleOnSubmit}>
-                {loading ? "Loading ... " : "DAFTAR"}
+                {loading ? "Loading ... " : "Daftar"}
               </Button>
             </div>
           </Form>

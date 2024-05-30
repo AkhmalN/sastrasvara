@@ -37,12 +37,13 @@ const Login = ({ setIsLoggedIn }) => {
 
   return (
     <Container className="Login">
-      <Row className="justify-content-md-center align-items-center min-vh-100">
+      <Row className="justify-content-evenly align-items-center min-vh-100">
         <Col md={3} xs={10}>
           <img src={LOGO} alt="Sastra Svara" width="100%" />
         </Col>
         <Col md={4} xs={12}>
-          <h1>Login Sastrasvara</h1>
+          <h1>Masuk Sastrasvara</h1>
+          <br/>
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Email:</Form.Label>
@@ -55,7 +56,7 @@ const Login = ({ setIsLoggedIn }) => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Password:</Form.Label>
+              <Form.Label>Kata Sandi:</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Password"
@@ -66,13 +67,13 @@ const Login = ({ setIsLoggedIn }) => {
 
             <div className="d-grid mb-3">
               <Button variant="primary" size="lg" onClick={handleOnSubmit}>
-                {loading ? "Loading ..." : "Login"}
+                {loading ? "Loading ..." : "Masuk"}
               </Button>
             </div>
             {error && <p className="text-danger">{error}</p>}
           </Form>
           <p>
-            Belum memiliki akun? <Link to={"/daftar"}>Register disini.</Link>
+            Belum memiliki akun? <Link to={"/daftar"}>Daftar disini.</Link>
           </p>
         </Col>
       </Row>

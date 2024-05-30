@@ -5,7 +5,9 @@ import Beranda from "./pages/Beranda";
 import PageNavbar from "./layouts/Navbar";
 import Login from "./layouts/Login";
 import RegisterForm from "./layouts/RegisterForm";
-import TentangKami from "./pages/TentangKami";
+import AdminDashboard from "./pages/AdminDashboard";
+import DetailCerita from "./pages/DetailCerita";
+import Cerita from "./pages/Cerita";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -42,7 +44,9 @@ const Index = () => {
         <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/beranda" element={<Beranda />} />
         <Route path="/daftar" element={<RegisterForm />} />
-        <Route path="/tentang-kami" element={<TentangKami />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/cerita" element={<Cerita />} />
+        <Route path="/cerita/judul" element={<DetailCerita />} />
       </Routes>
     </div>
   );

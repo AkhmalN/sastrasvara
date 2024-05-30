@@ -46,7 +46,7 @@ function LogoutModal({ showLogout, handleCloseLogout }) {
           Tidak
         </Button>
         <Button size="lg" className="me-5" onClick={handleLogout}>
-          Yakin
+          Ya
         </Button>
       </Modal.Body>
     </Modal>

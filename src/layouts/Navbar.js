@@ -6,7 +6,7 @@ import AkunModal from "./AkunModal";
 import { useState } from "react";
 import LogoutModal from "./LogoutModal";
 import { useNavigate } from "react-router-dom";
-import Logo from "../img/logo_sastrasvara.png"
+import Logo from "../img/logo_sastrasvara.png";
 
 function PageNavbar({ isLoggedIn }) {
   const navigate = useNavigate();
@@ -22,52 +22,30 @@ function PageNavbar({ isLoggedIn }) {
   const handleLogin = () => navigate("/");
 
   return (
-    <Navbar expand="lg" className="custom-navbar">
+    <Navbar expand="lg" className="custom-navbar bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">
-          <img src={Logo} alt="Sastra Svara" width={50} />
-        </Navbar.Brand>
-
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className="align-middle">
-          <Nav className="me-auto navbar-nav ms-auto nav_ul align-items-center">
-            <Nav.Link href="/" className="d-flex align-items-center fs-5 ">
-              Beranda
-            </Nav.Link>
-            <Nav.Link
-              href="/tentang-kami"
-              className="d-flex align-items-center fs-5"
-            >
-              Tentang Kami
-            </Nav.Link>
-
-            <NavDropdown
-              title="Cerita"
-              id="basic-nav-dropdown "
-              className="d-flex align-items-center fs-5 "
-            >
-              <NavDropdown.Item href="#action/3.1">Judul 1</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Judul 2</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Judul 3</NavDropdown.Item>
-            </NavDropdown>
-
-            <Nav>
-              <InputGroup size="sm" className="d-flex align-items-center mx-1 ">
-                <Form.Control
-                  aria-label="Small"
-                  aria-describedby="inputGroup-sizing-sm"
-                />
-                <InputGroup.Text
-                  id="inputGroup-sizing-sm"
-                  className="custom-input-btn mx-1"
-                >
-                  <FaSearch />
-                </InputGroup.Text>
-              </InputGroup>
-            </Nav>
+        {/* <Navbar.Brand href="/">SASTRASVARA</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Beranda</Nav.Link>
+            <Nav.Link href="#tentangkami">Tentang Kami</Nav.Link>
+            <Nav.Link href="#link">Cerita</Nav.Link>
           </Nav>
 
           <Nav className="d-flex align-items-center  ">
+            <InputGroup size="sm" className="d-flex align-items-center mx-1 ">
+              <Form.Control
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+              <InputGroup.Text
+                id="inputGroup-sizing-sm"
+                className="custom-input-btn mx-1"
+              >
+                <FaSearch />
+              </InputGroup.Text>
+            </InputGroup>
             {isLoggedIn ? (
               <NavDropdown
                 title={<FaUser />}
@@ -82,13 +60,14 @@ function PageNavbar({ isLoggedIn }) {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <NavDropdown
-                title="Masuk"
-                id="basic-nav-dropdown"
-                className="d-flex align-items-center"
-              >
-                <NavDropdown.Item onClick={handleLogin}>Masuk</NavDropdown.Item>
-              </NavDropdown>
+              // <NavDropdown
+              //   title="Masuk"
+              //   id="basic-nav-dropdown"
+              //   className="d-flex align-items-center"
+              // >
+              //   <NavDropdown.Item onClick={handleLogin}>Masuk</NavDropdown.Item>
+              // </NavDropdown>
+              <Nav.Link href="/" className="d-flex align-items-center">Masuk</Nav.Link>
             )}
             <AkunModal
               showAccount={showAccount}

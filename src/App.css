@@ -1,8 +1,7 @@
 :root {
-  --mainColor: #4e64b3;
-  --mainColorLight: #eef5ff;
-  --secondaryColor: #7c93c3;
-  --textColor: #9eb8d9;
+  --mainColor: #ee3682;
+  --secondaryColor: ;
+  --textColor: #000000;
   --buttonColor: #00abd0;
 }
 
@@ -12,10 +11,25 @@
   box-sizing: border-box;
 }
 
-body, 
+.tentangkami h2,
+.cerita-preview h2 {
+  color: var(--mainColor);
+  font-weight: bold;
+}
+
+/* ========== NAVBAR ========== */
 .custom-navbar .nav-link,
-.custom-navbar .nav {
-  color: var(--mainColor) !important;
+.custom-navbar .nav,
+.custom-navbar .navbar-brand {
+  color: var(--textColor) !important;
+  font-weight: bold;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav:hover,
+.custom-navbar .nav-link:active,
+.custom-navbar .nav:active {
+  text-decoration: underline;
 }
 
 .custom-input-btn {
@@ -24,12 +38,10 @@ body,
   height: 35px;
   cursor: pointer;
 }
-
-.nav_ul a {
-  color: #000 !important;
-}
+/* ========== END NAVBAR ========== */
 
 /* ========== LOGIN & REGISTER FORM ========== */
+
 .loginForm .row,
 .registerForm .row {
   align-items: center;
@@ -41,21 +53,101 @@ body,
 }
 /* ========== END LOGIN & REGISTER FORM ========== */
 
-
-/* ========== TENTANG KAMI ========== */
-.tentangKami {
-  margin: 50px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ========== BERANDA HEADER ========== */
+.beranda {
+  width: 90%;
 }
 
-.tentangKami p {
+.beranda header {
+  height: 90vh;
+}
+
+.beranda header,
+.beranda header button {
+  color: var(--textColor);
+}
+
+.beranda header img {
+  width: 15%;
+}
+
+.beranda header div h1 {
+  color: var(--mainColor);
+  font-size: 4rem;
+  letter-spacing: 1rem;
+}
+
+.beranda header button {
+  padding: 10px 15px;
+  margin-top: 15px;
+  background-color: var(--mainColor);
+  color: #fff;
+  border: 1px solid var(--mainColor);
+  border-radius: 5px;
+}
+
+.beranda header button:hover {
+  background-color: #fff;
+  color: var(--mainColor);
+}
+/* ========== END BERANDA HEADER ========== */
+
+/* ========== TENTANG KAMI ========== */
+.tentangkami {
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: justify;
+}
+
+.tentangkami p {
   font-size: 18px;
 }
 
-.tentangKami img {
+.tentangkami img {
   width: 65%;
+}
+
+/* ========== CERITA ========== */
+.cerita-preview {
+  padding: 50px 0;
+}
+
+.cerita-preview .cerita-prev-card .card {
+  width: 20rem;
+}
+
+.cerita-preview .cerita-prev-card .card-img-top {
+  width: 50%;
+}
+
+/* ========== END CERITA ========== */
+
+/* DETAIL CERITA */
+.detail-cerita {
+  width: 90%;
+  margin: 0 auto;
+}
+.detail-cerita p{
+  text-align: justify;
+}
+
+/* ADMIN */
+.admin {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.admin button {
+  border: none;
+}
+/* 
+.admin .icons {
+  margin: 0 10px;
+} */
+
+.admin .icons button {
+  border: none;
+  margin: 0 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -72,4 +164,3 @@ body,
     font-size: 16px;
   }
 }
-/* ========== END TENTANG KAMI ========== */
