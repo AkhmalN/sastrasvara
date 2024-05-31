@@ -8,7 +8,7 @@ import { ClipLoading } from "../components/Loader";
 function AdminModal({ showModal, handleCloseModal }) {
   const [judulCerita, setJudulCerita] = useState("");
   const [deskripsiCerita, setDeskripsiCerita] = useState("");
-  const [backsoundCerita, setBackSoundCerita] = useState(null);
+  const [audioCerita, setAudioCerita] = useState(null);
   const [gambarCerita, setGambarCerita] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -56,6 +56,20 @@ function AdminModal({ showModal, handleCloseModal }) {
               value={judulCerita}
               onChange={(e) => setJudulCerita(e.target.value)}
             />
+            <label className="form-label my-2">Gambar Cerita :</label>
+            <input
+              type="file"
+              className="form-control"
+              placeholder="gambar"
+              onChange={(e) => setGambarCerita(e.target.files[0])}
+            />
+            <label className="form-label my-2">Audio Cerita :</label>
+            <input
+              type="file"
+              className="form-control"
+              placeholder="backsound"
+              onChange={(e) => setAudioCerita(e.target.files[0])}
+            />
             <label className="form-label my-2">Deskripsi Cerita :</label>
             <textarea
               type="text"
@@ -65,29 +79,15 @@ function AdminModal({ showModal, handleCloseModal }) {
               onChange={(e) => setDeskripsiCerita(e.target.value)}
               rows={10}
             />
-            <label className="form-label my-2">Backsound Cerita :</label>
-            <input
-              type="file"
-              className="form-control"
-              placeholder="backsound"
-              onChange={(e) => setBackSoundCerita(e.target.files[0])}
-            />
-            <label className="form-label my-2">Gambar Cerita :</label>
-            <input
-              type="file"
-              className="form-control"
-              placeholder="gambar"
-              onChange={(e) => setGambarCerita(e.target.files[0])}
-            />
           </div>
         </Modal.Body>
 
         <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Batal
+          </Button>
           <Button variant="primary" onClick={handleTambahCerita}>
             {loading ? <ClipLoading /> : "Tambah"}
-          </Button>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Tutup
           </Button>
         </Modal.Footer>
       </Modal>

@@ -112,20 +112,39 @@
   padding: 50px 0;
 }
 
-.cerita-preview .cerita-prev-card .card {
+.cerita-preview .card {
   width: 20rem;
 }
 
-.cerita-preview .cerita-prev-card .card-img-top {
-  width: 50%;
+.cerita-preview .card a {
+  text-decoration: none;
+  color: var(--textColor);
 }
 
+.cerita-preview .card a:hover {
+  text-decoration: underline;
+  color: navy;
+}
+
+.cerita {
+  width: 90%;
+}
+
+.cerita .card {
+  width: 18rem;
+}
 /* ========== END CERITA ========== */
 
 /* DETAIL CERITA */
 .detail-cerita {
   width: 90%;
-  margin: 0 auto;
+  margin: 3rem auto;
+}
+
+.detail-cerita img {
+  width: 30%;
+  float: left;
+  margin: 0 2rem 2rem 0;
 }
 .detail-cerita p{
   text-align: justify;
@@ -134,21 +153,17 @@
 /* ADMIN */
 .admin {
   width: 90%;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
-.admin button {
-  border: none;
+.admin{
+  width: 100%;
 }
-/* 
-.admin .icons {
-  margin: 0 10px;
-} */
 
-.admin .icons button {
-  border: none;
-  margin: 0 10px;
+.admin .input-group {
+  width: 50%;
 }
+/* END ADMIN */
 
 @media screen and (max-width: 768px) {
   .tentangKami {

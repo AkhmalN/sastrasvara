@@ -23,7 +23,7 @@ function PageNavbar({ isLoggedIn }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/beranda">Beranda</Nav.Link>
-            <Nav.Link href="/tentang_kami">Tentang Kami</Nav.Link>
+            <Nav.Link href="">Tentang Kami</Nav.Link>
             <Nav.Link href="/cerita">Cerita</Nav.Link>
           </Nav>
 

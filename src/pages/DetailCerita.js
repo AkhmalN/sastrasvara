@@ -4,7 +4,7 @@ function DetailCerita() {
   return (
     <div className="detail-cerita">
       <img src={AjisakaPic} />
-      <audio controls>
+      <audio controls className="mb-3">
         <source src={AjisakaSound} type="audio/mpeg" />
       </audio>
       <p>

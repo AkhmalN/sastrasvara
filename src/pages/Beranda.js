@@ -3,6 +3,7 @@ import ImageLogo from "../img/logo_sastrasvara.png";
 import { Button, Card } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
 import AjisakaPic from "../img/ajisaka.jpeg";
+import CobanRondoPic from "../img/coban_rondo.jpeg";
 
 const Beranda = ({ isLoggedIn }) => {
   return (
@@ -21,7 +22,7 @@ const Beranda = ({ isLoggedIn }) => {
         <img src={ImageLogo} alt="sastrasvara"></img>
       </header>
 
-      <div className="tentangkami">
+      <div id="tentangkammi" className="tentangkami">
         <h2 className="text-center">Tentang Kami</h2>
         <br />
         <p>
@@ -41,14 +42,21 @@ const Beranda = ({ isLoggedIn }) => {
       <div className="cerita-preview">
         <h2 className="text-center">Cerita</h2>
         <br />
-        <div className="cerita-prev-card d-flex">
+        <div className="d-flex justify-content-evenly text-center">
           <Card id="">
             <Card.Img variant="top" src={AjisakaPic} />
             <Card.Body>
-              <Card.Title>judul</Card.Title>
-              <Link to={"/cerita/judul"} className="text-right">
-                selengkapnya
-              </Link>
+              <Card.Title>
+                <Link to={"/cerita/judul"}>Legenda Aji Saka</Link>
+              </Card.Title>
+            </Card.Body>
+          </Card>
+          <Card id="">
+            <Card.Img variant="top" src={CobanRondoPic} />
+            <Card.Body>
+              <Card.Title>
+                <Link to={"/cerita/judul"}>Asal Usul Coban Rondo</Link>
+              </Card.Title>
             </Card.Body>
           </Card>
         </div>
