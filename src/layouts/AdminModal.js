@@ -19,11 +19,17 @@ function AdminModal({ showModal, handleCloseModal }) {
 
   const handleTambahCerita = async () => {
     setLoading(true);
-    const data = {
-      judul: judulCerita,
-      script: deskripsiCerita,
-    };
-    const response = await createCerita(data);
+    const formData = new FormData();
+    formData.append("judul", judulCerita);
+    formData.append("script", deskripsiCerita);
+    if (gambarCerita) {
+      formData.append("image", gambarCerita[0]);
+    }
+    if (audioCerita) {
+      formData.append("audio", audioCerita[0]);
+    }
+
+    const response = await createCerita(formData);
     if (response.status === 200) {
       Swal.fire({
         title: "Berhasil menambah cerita!",
@@ -61,14 +67,14 @@ function AdminModal({ showModal, handleCloseModal }) {
               type="file"
               className="form-control"
               placeholder="gambar"
-              onChange={(e) => setGambarCerita(e.target.files[0])}
+              onChange={(e) => setGambarCerita(e.target.files)}
             />
             <label className="form-label my-2">Audio Cerita :</label>
             <input
               type="file"
               className="form-control"
               placeholder="backsound"
-              onChange={(e) => setAudioCerita(e.target.files[0])}
+              onChange={(e) => setAudioCerita(e.target.files)}
             />
             <label className="form-label my-2">Deskripsi Cerita :</label>
             <textarea

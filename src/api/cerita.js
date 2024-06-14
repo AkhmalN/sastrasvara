@@ -7,7 +7,7 @@ export const createCerita = async (data) => {
       data,
       {
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
         },
       }
     );
@@ -16,7 +16,6 @@ export const createCerita = async (data) => {
     }
   } catch (error) {
     throw new Error("Terjadi kesalahan. Silakan coba lagi.", error);
-  } finally {
   }
 };
 

@@ -6,12 +6,14 @@ import { getAllCerita } from "../api/cerita";
 import AdminReadModal from "../layouts/AdminReadModal";
 import AdminEditModal from "../layouts/AdminEditModal";
 import AdminDeleteModal from "../layouts/AdminDeleteModal";
+import { getImageLink, getEmbedUrl } from "../utils/ConvertLink";
 
 function AdminDashboard() {
   const [username, setUsername] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [dataCerita, setDataCerita] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
@@ -30,11 +32,15 @@ function AdminDashboard() {
     setLoading(true);
     try {
       const response = await getAllCerita();
+      console.log(response);
       if (response.status === 200) {
         setLoading(false);
         setDataCerita(response.data);
       }
-    } catch (error) {}
+    } catch (error) {
+      setLoading(false);
+      setErrorMessage(error.message);
+    }
   };
 
   useEffect(() => {
@@ -74,12 +80,15 @@ function AdminDashboard() {
       </div>
 
       {loading && <p>Loading data cerita ...</p>}
+      {errorMessage && <p>{errorMessage}</p>}
       <Table striped bordered>
         <thead>
           <tr>
-            <th className="text-center col-lg-1">No.</th>
-            <th className="text-center col-lg-8">Judul Cerita</th>
-            <th className="text-center col-lg-3">Action</th>
+            <th className="text-center">No.</th>
+            <th className="text-center">Judul Cerita</th>
+            <th className="text-center">Gambar Cerita</th>
+            <th className="text-center">Audio Cerita</th>
+            <th className="text-center">Action</th>
           </tr>
         </thead>
 
@@ -90,6 +99,31 @@ function AdminDashboard() {
                 <tr key={data._id}>
                   <td>1</td>
                   <td>{data.judul ? data.judul : "-"}</td>
+                  <td>
+                    {data.image ? (
+                      <img
+                        src={getImageLink(data.image)}
+                        width={100}
+                        height={100}
+                      />
+                    ) : (
+                      "-"
+                    )}
+                  </td>
+                  <td>
+                    {data.audio ? (
+                      <iframe
+                        title="audio player"
+                        width="500"
+                        height="60"
+                        src={getEmbedUrl(data.audio)}
+                        frameborder="0"
+                        allowfullscreen
+                      ></iframe>
+                    ) : (
+                      "Tidak dapat mengambil data audio"
+                    )}
+                  </td>
                   <td>
                     <div className="icons d-flex justify-content-center">
                       {showReadModal && (
@@ -124,7 +158,10 @@ function AdminDashboard() {
                           handleCloseDeleteModal={handleCloseDeleteModal}
                         />
                       )}
-                      <button className="btn btn-danger  mx-1" onClick={handleShowDeleteModal}>
+                      <button
+                        className="btn btn-danger  mx-1"
+                        onClick={handleShowDeleteModal}
+                      >
                         <FaTrash />
                       </button>
                     </div>
